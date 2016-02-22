@@ -13,61 +13,6 @@
 }
 
 
-/* Spinning loader ------------------*/
-
-.spinner {
-  -webkit-animation-name: spin;
-  -webkit-animation-duration: 700ms;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-name: spin;
-  -moz-animation-duration: 700ms;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  -ms-animation-name: spin;
-  -ms-animation-duration: 700ms;
-  -ms-animation-iteration-count: infinite;
-  -ms-animation-timing-function: linear;
-  -o-transition: rotate(3600deg);
-}  
-
-@-webkit-keyframes spin {
-  from {-webkit-transform:rotate(0deg);}
-  to {-webkit-transform:rotate(360deg);}
-}
-
-@-moz-keyframes spin {
-  from {-moz-transform:rotate(0deg);}
-  to {-moz-transform:rotate(360deg);}
-}
-
-@-o-keyframes spin {
-  from {-o-transform:rotate(0deg);}
-  to {-o-transform:rotate(360deg);}
-}
-
-@-ms-keyframes spin {
-  from {-ms-transform:rotate(0deg);}
-  to {-ms-transform:rotate(360deg);}
-}
-
-@keyframes spin {
-  from {transform:rotate(0deg);}
-  to {transform:rotate(360deg);}
-}
-
-
-
-/* Img url ------------------*/
-
-.img {
-  background: url('../img/apples.jpg') center center no-repeat;
-  width: 100%;
-  height: 100vh;
-}
-
-
-
 
 
 /* Typography ------------------*/
@@ -76,6 +21,7 @@
 /* Slider ----------------------*/
 
 /* Prevent the slideshow from flashing on load */
+
 #slides {
   display: none;
 }
@@ -100,34 +46,49 @@
 
 /*background-color change*/
 .slide, .shape {
-  -webkit-transition: background 1s ease;
-  -moz-transition: background: 1s ease;
-  transition: background 1s ease;
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color: 1s;
+  transition: background-color 1s;
 }
-
 
 /* slides transition */
-.slide .img-wrapper {
-  width: 0%;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all: 1s ease;
-  transition: all 1s ease;
+
+
+.slide .img-wrapper img {
+  -webkit-transform: translateX(130%);
+  -moz-transform: translateX(130%);
+  transform: translateX(130%);
+  -webkit-transition: all 1s;
+  -moz-transition: all: 1s;
+  transition: all 1s;
 }
 
-.active .img-wrapper {
-  width: 80%;
+.active .img-wrapper img {
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+.slide .img-wrapper {
+  width: 75%;
+  z-index: 1;
+  position: relative;
 }
 
 .shape {
   height: 100%;
-  width: 20%;
+  width: 25%;
+  border: 1px solid transparent;
+  z-index: 2;
 }
 
-.yellow, .active .shape.yellow {
+.yellow,
+.active .shape.yellow {
   background: #92423b; /*red*/
 }
 
-.yellow.active, .shape.yellow {
+.yellow.active,
+.shape.yellow {
   background: #dca15f; /*yellow*/
 }
 
@@ -135,42 +96,143 @@
   background: #92423b;
 }
 
-.blue {
-  background: #212733;
+.blue,
+.active .shape.khaki {
+  background: #cdc28a; /*khaki*/
+}
+
+.khaki.active,
+.slide.pink,
+.active .pink {
+  background-color: rgba(199,111,109,1); /*pink*/
 }
 
 .khaki {
-  background: #7e7e5c;
+  background-color: #cdc28a; 
+}
+
+.shape.khaki {
+	background-color:  #92afad;	/*lightblue*/
+}
+
+.pink,
+.slide.pink.active {
+  background: rgba(199,111,109,1); /*pink*/
+}
+
+.shape.brown{
+  background-color: #3b2d2c;
+}
+
+.sand {
+  background-color: #cdc28a;
+}
+
+.active .shape.yellow,
+.slide.yellow {
+  background-color: #493f33; /*olive*/
+}
+
+.slide.active.yellow {
+  background: #dca15f;
+}
+
+.active .shape.bone,
+.slide.bone,
+.shape.turquoise {
+  background-color: #e5ded4; /*bone*/
+}
+
+.active.shape.turquoise{
+  background-color: #314d51; /*turquoise*/
+}
+
+.slide.active.bone, 
+.shape.bone {
+  background-color: #e5ded4; /*bone*/
+}
+
+.active .shape.lightblue {
+  background-color:  #92afad; /*lightblue*/
 }
 
 
+.slide-2 .img-wrapper img {
+  position: absolute;
+  bottom: 0;
+}
+
+/*.slide-3 .shape {
+  width: 12.5%;
+} */
+
+
+.slidesjs-pagination {
+  display: none;
+}
 
 /* Show active item in the pagination */
 .slidesjs-pagination .active {
   color:red;
 }
 
+
 .slidesjs-navigation {
   position: absolute;
   top: 0;
   z-index: 10;
-  width: 30%;
+  width: 25%;
   height: 100%;
-  color: #fff;
-  font-size: 5rem;
+  font-size: 0px;
+  color: transparent;
+  background-repeat: no-repeat;
+    background-size: 40px;
+  -webkit-transition: background-position 100ms;
+  -moz-transition: background-position: 100ms;
+  transition: background-position 100ms;
 }
-
 
 .slidesjs-next {
   right: 0;
+  background-image: url('../img/next.png');
+  background-position: 75% center;
 }
 
 .slidesjs-previous{
   left: 0;
+  background-image: url('../img/prev.png');
+  background-position: 25% center;
 }
 
 
+.slidesjs-next:hover{
+  background-position: 80% center;
+  -webkit-transition: background-position 100ms;
+  -moz-transition: background-position: 100ms;
+  transition: background-position 100ms;
+}
 
+.slidesjs-previous:hover{
+  background-position: 20% center;
+  -webkit-transition: background-position 100ms;
+  -moz-transition: background-position: 100ms;
+  transition: background-position 100ms;
+}
+
+.slide .caption {
+	color: #fff;
+	text-align: center;
+	font-size: 2rem;
+	transform: translateY(60%);
+}
+
+.slides .overview {
+	display: flex;
+}
+
+.slides .overview .thumb {
+	width: 30%;
+}
 
 
 

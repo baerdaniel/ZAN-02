@@ -6,7 +6,7 @@
     pluginName = "slidesjs";
     defaults = {
       width: 940,
-      height: 528,
+      height: 550,
       start: 1,
       navigation: {
         active: true,
@@ -219,7 +219,7 @@
       this.options.height = height;
       return $(".slidesjs-control, .slidesjs-container", $element).css({
          width: width, //slides control width
-        height: height
+         height: height
       });
     };
     Plugin.prototype.next = function(effect) {
