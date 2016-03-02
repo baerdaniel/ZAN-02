@@ -20,9 +20,8 @@
 
 /* Slider ----------------------*/
 
-/* Prevent the slideshow from flashing on load */
 
-#slides {
+#slides { /* Prevent the slideshow from flashing on load */
   display: none;
 }
 
@@ -47,7 +46,7 @@
 /*background-color change*/
 .slide, .shape {
   -webkit-transition: background-color 1s;
-  -moz-transition: background-color: 1s;
+  -moz-transition: background-color 1s;
   transition: background-color 1s;
 }
 
@@ -59,7 +58,7 @@
   -moz-transform: translateX(130%);
   transform: translateX(130%);
   -webkit-transition: all 1s;
-  -moz-transition: all: 1s;
+  -moz-transition: all 1s;
   transition: all 1s;
 }
 
@@ -188,7 +187,7 @@
   background-repeat: no-repeat;
     background-size: 40px;
   -webkit-transition: background-position 100ms;
-  -moz-transition: background-position: 100ms;
+  -moz-transition: background-position 100ms;
   transition: background-position 100ms;
 }
 
@@ -208,14 +207,14 @@
 .slidesjs-next:hover{
   background-position: 80% center;
   -webkit-transition: background-position 100ms;
-  -moz-transition: background-position: 100ms;
+  -moz-transition: background-position 100ms;
   transition: background-position 100ms;
 }
 
 .slidesjs-previous:hover{
   background-position: 20% center;
   -webkit-transition: background-position 100ms;
-  -moz-transition: background-position: 100ms;
+  -moz-transition: background-position 100ms;
   transition: background-position 100ms;
 }
 
